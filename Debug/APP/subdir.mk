@@ -4,12 +4,15 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../APP/Counter_Program.c \
 ../APP/Main.c 
 
 OBJS += \
+./APP/Counter_Program.o \
 ./APP/Main.o 
 
 C_DEPS += \
+./APP/Counter_Program.d \
 ./APP/Main.d 
 
 

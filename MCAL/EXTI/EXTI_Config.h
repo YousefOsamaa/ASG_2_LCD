@@ -3,7 +3,7 @@
 
 
 
-#define EXTI_INT_COUNT  1
+#define EXTI_INT_COUNT  2
 
 typedef struct 
 {

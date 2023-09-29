@@ -4,6 +4,9 @@
 #include "../../LIB/STD.h"
 #include "../../LIB/ErrorStates.h"
 
+//Number of Switches used
+#define SW_MAX_NUMBER  2
+
 //Pushbuttons pins' groups
 #define PUSHBUTTON_0_GROUP    DIO_PIN_GROUP_B  
 #define PUSHBUTTON_1_GROUP    DIO_PIN_GROUP_D  
@@ -21,8 +24,6 @@
 #define PUSHBUTTON_1_IRESISTOR   DIO_FLOAT  
 #define PUSHBUTTON_2_IRESISTOR   DIO_FLOAT
 
-//Number of Switches used
-#define SW_MAX_NUMBER  1
 
 
 

@@ -96,11 +96,11 @@ extern ErrorState_t EXTI_enu_GetPIF (u8 Copy_u8_INTNumber, u8* Copy_pu8_Result)
     return Local_u8_ErrorFlag;
 }
 
-extern ErrorState_t EXTI_enu_SeTPIF (u8 Copy_u8_INTNumber, u8 Copy_u8_Value)
+extern ErrorState_t EXTI_enu_ClearINTFx (u8 Copy_u8_INTNumber)
 {
     u8 Local_u8_ErrorFlag = ES_NOK;
 
-    Local_u8_ErrorFlag = enu_SetFlagValue(Copy_u8_INTNumber, Copy_u8_Value);
+    Local_u8_ErrorFlag = enu_SetFlagValue(Copy_u8_INTNumber, EXTI_HIGH);
 
     return Local_u8_ErrorFlag;
 }
@@ -367,12 +367,6 @@ static ErrorState_t enu_SetFlagValue(u8 Copy_u8_INTNumber, u8 Copy_u8_Value)
                 
                 Local_u8_ErrorFlag = ES_OK;
             }
-            else if (Copy_u8_Value == EXTI_LOW)
-            {
-                GIFR &= ~( 1 << GIFR_INTF0);
-
-                Local_u8_ErrorFlag = ES_OK;
-            }
             else
             {
                 Local_u8_ErrorFlag = ES_OUT_OF_RANGE;
@@ -389,12 +383,6 @@ static ErrorState_t enu_SetFlagValue(u8 Copy_u8_INTNumber, u8 Copy_u8_Value)
 
                 Local_u8_ErrorFlag = ES_OK;
             }
-            else if (Copy_u8_Value == EXTI_LOW)
-            {
-                GIFR &= ~( 1 << GIFR_INTF1);
-
-                Local_u8_ErrorFlag = ES_OK;
-            }
             else
             {
                 Local_u8_ErrorFlag = ES_OUT_OF_RANGE;
@@ -408,12 +396,6 @@ static ErrorState_t enu_SetFlagValue(u8 Copy_u8_INTNumber, u8 Copy_u8_Value)
             {
                 GIFR |= ( 1 << GIFR_INTF2);
                 
-                Local_u8_ErrorFlag = ES_OK;
-            }
-            else if (Copy_u8_Value == EXTI_LOW)
-            {
-                GIFR &= ~( 1 << GIFR_INTF2);
-
                 Local_u8_ErrorFlag = ES_OK;
             }
             else

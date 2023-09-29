@@ -15,7 +15,7 @@ extern ErrorState_t LCD_enu_Initialization(void)
     u8 Local_u8_ErrorFlag = ES_NOK;
 
     //Intitial delay
-     _delay_ms(35);
+    _delay_ms(35);
    
     DIO_enu_SetPinDiretion(LCD_RS_GROUP,LCD_RS_PIN,DIO_PIN_WRITE);
     DIO_enu_SetPinDiretion(LCD_RW_GROUP,LCD_RW_PIN,DIO_PIN_WRITE);
@@ -65,7 +65,7 @@ extern ErrorState_t LCD_enu_Initialization(void)
 
     //Display ON/OFF control
     DIO_enu_SetPinValue(LCD_RS_GROUP, LCD_RS_PIN, DIO_LOW);
-    enu_PassByteAndLatch(0x0F);
+    enu_PassByteAndLatch(0x0C);
 
     //Display clear
     DIO_enu_SetPinValue(LCD_RS_GROUP, LCD_RS_PIN, DIO_LOW);
@@ -77,6 +77,7 @@ extern ErrorState_t LCD_enu_Initialization(void)
     
 
     Local_u8_ErrorFlag = ES_OK; //should be checked on with a for loop
+
     return Local_u8_ErrorFlag;
 }
 
